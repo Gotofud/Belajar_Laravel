@@ -29,6 +29,10 @@ Route::get('/contact', function () {
     return 'Halo Ini Contact';
 });
 
+Route::get('/siswa', function () {
+    $data_siswa = ['Fazli','Sulis','Kiki','Rido','Agoes Hangky'];
+    return view('tampil', compact('data_siswa'));
+});
 
 Route::get('/tes/{nama}/{tempat_lahir}/{jk}/{agama}/{alamat}', function ($nama, $tmp_lahir, $jk, $agama, $alamat) {
     return "Nama : " . $nama . "<br>" .
