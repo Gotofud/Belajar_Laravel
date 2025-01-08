@@ -18,7 +18,10 @@ class PostsTableSeeder extends Seeder
         $posts = [
         ['title'=>'Tips Cepat Kaya', 'content'=>'korupsi'],
         ['title'=>'Haruskah kita serang israel?', 'content'=>'Harus'],
-        ['title'=>'Membangun dinasti pemerintah', 'content'=>'lorem ipsum 404']
+        ['title'=>'Membangun dinasti pemerintah', 'content'=>'lorem ipsum 404'],
+        ['title'=>'Membangun dinasti pemerintah 2', 'content'=>'lorem ipsum 404'],
+        ['title'=>'Membangun dinasti pemerintah 3', 'content'=>'lorem ipsum 404']
+        
     ];
 
     DB::table('posts')->insert($posts);

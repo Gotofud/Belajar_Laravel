@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Barang;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -106,3 +108,17 @@ Route::get(
             "Total Pembayaran Rp: " . number_format($total_akhir) . "<br>";
     }
 );
+
+
+Route::get('/post', [PostsController::class, 'menampilkan']);
+
+Route::get('/barang', [PostsController::class, 'menampilkan2']);
+
+// Route::get('/barang', function () {
+//     // $barang = Barang::where('merk','LIKE', '%honda%')->get(); ini untuk kata yang mirip
+//     $barang = Barang::where('id', 3)->get();
+//     return view('tampil_barang',compact('barang'));
+// });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
