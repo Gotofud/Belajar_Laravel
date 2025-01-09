@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Barang;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\Siswascontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,7 @@ Route::get('/contact', function () {
 });
 
 Route::get('/siswa', function () {
-    $data_siswa = ['Fazli','Sulis','Kiki','Rido','Agoes Hangky'];
+    $data_siswa = ['Fazli', 'Sulis', 'Kiki', 'Rido', 'Agoes Hangky'];
     return view('tampil', compact('data_siswa'));
 });
 
@@ -122,3 +123,6 @@ Route::get('/barang', [PostsController::class, 'menampilkan2']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+route::resource('siswa', Siswascontroller::class);
