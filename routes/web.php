@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Barang;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\Siswascontroller;
+use App\Http\Controllers\PppdbsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -126,3 +127,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 route::resource('siswa', Siswascontroller::class);
+route::resource('ppdb', PppdbsController::class);

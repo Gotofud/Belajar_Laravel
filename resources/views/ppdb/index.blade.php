@@ -1,10 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    body{
+        background-color: whitesmoke;
+    }
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card ">
                 <div class="card-header">{{ __('Data Siswa') }}</div>
 
                 <div class="card-body">
@@ -18,10 +23,12 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">NIS</th>
-                                <th scope="col">Nama</th>
+                                <th scope="col">Nama Lengkap</th>
                                 <th scope="col">Jenis Kelamin</th>
-                                <th scope="col">Kelas</th>
+                                <th scope="col">Agama</th>
+                                <th scope="col">Alamat</th>
+                                <th scope="col">No Telepon</th>
+                                <th scope="col">Asal Sekolah</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -29,17 +36,19 @@
                             @php
                                 $no = 1;
                             @endphp
-                            @foreach ($siswa as $data)
+                            @foreach ($ppdb as $data)
                                 <tr>
                                     <th scope="row">{{ $no++ }}</th>
-                                    <td>{{ $data->nis }}</td>
-                                    <td>{{ $data->nama }}</td>
+                                    <td>{{ $data->nama_lengkap }}</td>
                                     <td>{{ $data->jenis_kelamin }}</td>
-                                    <td>{{ $data->kelas }}</td>
+                                    <td>{{ $data->agama }}</td>
+                                    <td>{{ $data->alamat }}</td>
+                                    <td>{{ $data->telepon }}</td>
+                                    <td>{{ $data->asal_sekolah }}</td>
                                     <td>
-                                        <form action="{{route('siswa.destroy', $data->id)}}" method="POST">
-                                            <a href="{{route('siswa.edit', $data->id)}}" class="btn btn-success">Edit</a>
-                                            <a href="{{route('siswa.show', $data->id)}}" class="btn btn-warning">Show</a>
+                                        <form action="{{route('ppdb.destroy', $data->id)}}" method="POST">
+                                            <a href="{{route('ppdb.edit', $data->id)}}" class="btn btn-success">Edit</a>
+                                            <a href="{{route('ppdb.show', $data->id)}}" class="btn btn-warning">Show</a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger"
@@ -51,7 +60,7 @@
                         </tbody>
                     </table>
 
-                    <a href="{{route('siswa.create')}}" class="btn btn-primary">Add</a>
+                    <a href="{{route('ppdb.create')}}" class="btn btn-primary">Add</a>
                 </div>
             </div>
         </div>
