@@ -5,6 +5,7 @@ use App\Models\Barang;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\Siswascontroller;
 use App\Http\Controllers\PppdbsController;
+use App\Http\Controllers\PenggunaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -128,3 +129,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 route::resource('siswa', Siswascontroller::class);
 route::resource('ppdb', PppdbsController::class);
+route::resource('pengguna', PenggunaController::class);
