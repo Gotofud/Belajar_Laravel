@@ -6,6 +6,9 @@ use App\Http\Controllers\PostsController;
 use App\Http\Controllers\Siswascontroller;
 use App\Http\Controllers\PppdbsController;
 use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\TeleponController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -126,7 +129,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// CRUD
 
 route::resource('siswa', Siswascontroller::class);
 route::resource('ppdb', PppdbsController::class);
 route::resource('pengguna', PenggunaController::class);
+route::resource('telepon', TeleponController::class);
+route::resource('kategori', KategoriController::class);
+route::resource('produk', ProdukController::class);

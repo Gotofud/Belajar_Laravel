@@ -19,7 +19,7 @@
                             <tr>
                                 <th scope="col">No</th>
                                 <th scope="col">Id</th>
-                                <th scope="col">Nama</th>
+                                <th scope="col">Nama Kategori</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -27,15 +27,15 @@
                             @php
                                 $no = 1;
                             @endphp
-                            @foreach ($pengguna as $data)
+                            @foreach ($kategori as $data)
                                 <tr>
                                     <th scope="row">{{ $no++ }}</th>
                                     <td>{{ $data->id }}</td>
-                                    <td>{{ $data->nama }}</td>
+                                    <td>{{ $data->nama_kategori }}</td>
                                     <td>
-                                        <form action="{{route('pengguna.destroy', $data->id)}}" method="POST">
-                                            <a href="{{route('pengguna.edit', $data->id)}}" class="btn btn-success">Edit</a>
-                                            <a href="{{route('pengguna.show', $data->id)}}" class="btn btn-warning">Show</a>
+                                        <form action="{{route('kategori.destroy', $data->id)}}" method="POST">
+                                            <a href="{{route('kategori.edit', $data->id)}}" class="btn btn-success">Edit</a>
+                                            <a href="{{route('kategori.show', $data->id)}}" class="btn btn-warning">Show</a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger"
@@ -47,7 +47,7 @@
                         </tbody>
                     </table>
 
-                    <a href="{{route('pengguna.create')}}" class="btn btn-primary">Add</a>
+                    <a href="{{route('kategori.create')}}" class="btn btn-primary">Add</a>
                 </div>
             </div>
         </div>

@@ -11,4 +11,9 @@ class Pengguna extends Model
 
     protected $fillable = ['id','nama'];
     public $timestamp;
+
+    // Relasi model
+    public function telepon(){
+        return $this->hasOne(Telepon::class);
+    }
 }
