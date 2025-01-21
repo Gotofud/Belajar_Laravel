@@ -12,7 +12,7 @@ class Kategori extends Model
     protected $fillable = ['id', 'nama_kategori'];
     public $timestamp = true;
 
-    public function kategori(){
+    public function produk(){
         return $this->hasMany(Produk::class);
     }
 }

@@ -36,15 +36,16 @@
                                     <td>{{ $data->kategori->nama_kategori }}</td>
                                     <td>{{ $data->harga }}</td>
                                     <td>{{ $data->stok }}</td>
+
                                     <td>
                                         <form action="{{route('produk.destroy', $data->id)}}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
+                                            @csrf
+                                            @method('DELETE')
                                             <a href="{{route('produk.edit', $data->id)}}" class="btn btn-success">Edit</a>
                                             <a href="{{route('produk.show', $data->id)}}" class="btn btn-warning">Show</a>
                                             <button type="submit" class="btn btn-danger"
                                                 onclick="return confirm('Apakah anda yakin?')">Delete</button>
-                                        </form> 
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

@@ -56,7 +56,9 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        //
+        $produk = Produk::findOrFail($id);
+        $kategori = Kategori::all();
+        return view('produk.show', compact('produk','kategori'));
     }
 
     /**
@@ -67,7 +69,9 @@ class ProdukController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produk = Produk::findOrFail($id);
+        $kategori = Kategori::all();
+        return view('produk.edit', compact('produk','kategori'));
     }
 
     /**
@@ -79,7 +83,14 @@ class ProdukController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $produk = Produk::findOrFail($id);
+        $produk->nama_produk = $request->nama_produk;
+        $produk->harga = $request->harga;
+        $produk->stok = $request->stok;
+        $produk->id_kategori = $request->id_kategori;
+        $produk->save();
+
+        return redirect()->route('produk.index')->with('success', 'Data berhasil di edit');
     }
 
     /**
@@ -90,6 +101,9 @@ class ProdukController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produk = Produk::findOrFail($id);
+        $produk->delete();
+        
+        return redirect()->route('produk.index')->with('success', 'Data berhasil di hapus');
     }
 }

@@ -10,7 +10,7 @@ class Telepon extends Model
     use HasFactory;
 
     protected $fillable = ['id','nomor', 'id_pengguna'];
-    public $timestamp= true;
+    public $timestamp = true;
 
     public function pengguna(){
         return $this->belongsTo(Pengguna::class, 'id_pengguna');
