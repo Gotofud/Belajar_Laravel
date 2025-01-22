@@ -3,20 +3,26 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md">
+            <div class="card">
+                <div class="card-header bg-dark text-white">Pages</div>
+                <div class="card-body bg-light">
+                    <a href="{{route('product.index')}}" class="btn btn-success btn-sm mb-2">Product</a>
+                    <a href="{{route('customer.index')}}" class="btn btn-warning btn-sm">Customer</a></li>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10">
             <div class="card w-100">
                 <div class="card-header bg-dark text-white">{{ __('Data') }}</div>
-
                 <div class="card-body">
                     @if (session('success'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{session('success')}}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{session('success')}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
                     @endif
                     <table class="table table-light table-striped">
-                    <a href="{{route('product.index')}}" class="btn btn-success btn-sm mx-2">Product</a>
-                    <a href="{{route('customer.index')}}" class="btn btn-warning btn-sm">Customer</a>
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
@@ -40,8 +46,10 @@
                                     <td>{{ $data->order_date }}</td>
                                     <td>
                                         <form action="{{route('order.destroy', $data->id)}}" method="POST">
-                                            <a href="{{route('order.edit', $data->id)}}" class="btn btn-success btn-sm">Edit</a>
-                                            <a href="{{route('order.show', $data->id)}}" class="btn btn-warning btn-sm">Show</a>
+                                            <a href="{{route('order.edit', $data->id)}}"
+                                                class="btn btn-success btn-sm">Edit</a>
+                                            <a href="{{route('order.show', $data->id)}}"
+                                                class="btn btn-warning btn-sm">Show</a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm"
