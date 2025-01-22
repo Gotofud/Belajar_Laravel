@@ -19,7 +19,7 @@
                             <label>ID Kategori : </label>
                            <select name="id_kategori" class="form-select">
                             @foreach ( $kategori as $data )
-                             <option value="{{$data->id}}">{{$data->nama_kategori}}</option>
+                             <option value="{{$data->id}}" selected>{{$data->nama_kategori}}</option>
                             @endforeach    
                         </select> 
                         </div>
@@ -31,7 +31,7 @@
                             <label>Stok  : </label>
                             <input type="number" class="form-control" name="stok" value="{{$produk->stok}}">
                         </div>
-                        <button type="submit" class="btn btn-primary" name="save">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="save">Edit</button>
                     </form>
                 </div>
             </div>

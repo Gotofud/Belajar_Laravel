@@ -9,6 +9,9 @@ use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\TeleponController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -137,3 +140,6 @@ route::resource('pengguna', PenggunaController::class);
 route::resource('telepon', TeleponController::class);
 route::resource('kategori', KategoriController::class);
 route::resource('produk', ProdukController::class);
+route::resource('product', ProductController::class);
+route::resource('customer', CustomerController::class);
+route::resource('order', OrderController::class);
