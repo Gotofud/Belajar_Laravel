@@ -37,6 +37,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'name_product' => 'required|min:5',
+            'merk' => 'required',
+            'price' => 'required|max:200',
+            'stock' => 'required|max:200'
+        ]);
+
         $product = new Product();
         $product->id = $request->id;
         $product->name_product = $request->name_product;
@@ -81,6 +88,13 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'name_product' => 'required',
+            'merk' => 'required',
+            'price' => 'required|max:200',
+            'stock' => 'required|max:200'
+        ]);
+
         $product = Product::findOrFail($id);
         $product->name_product = $request->name_product;
         $product->merk = $request->merk;

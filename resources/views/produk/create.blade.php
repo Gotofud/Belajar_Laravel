@@ -30,6 +30,10 @@
                             <label>Stok  : </label>
                             <input type="number" class="form-control" name="stok">
                         </div>
+                        <div class="mb-3">
+                            <label>Cover : </label>
+                            <input type="file" class="form-control" name="cover">
+                        </div>
                         <button type="submit" class="btn btn-primary" name="save">Submit</button>
                     </form>
                 </div>

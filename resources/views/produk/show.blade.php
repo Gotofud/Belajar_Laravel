@@ -31,7 +31,10 @@
                             <label>Stok  : </label>
                             <input type="number" class="form-control" name="stok" value="{{$produk->stok}}" disabled>
                         </div>
-                        
+                        <div class="mb-3">
+                            <label>Cover : </label>
+                            <img src="{{ asset('/images/produk/' . $produk->cover)}}" width="100" class="rounded">
+                        </div>
                         <a href="{{route('produk.index')}}" class="btn btn-warning">Kembali</a>    
                     </form>
                 </div>

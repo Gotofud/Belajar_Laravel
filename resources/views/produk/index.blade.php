@@ -18,6 +18,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
+                                <th scope="col">Cover</th>
                                 <th scope="col">Nama Produk</th>
                                 <th scope="col">ID Barang</th>
                                 <th scope="col">Harga</th>
@@ -32,6 +33,9 @@
                             @foreach ($produk as $data)
                                 <tr>
                                     <th scope="row">{{ $no++ }}</th>
+                                    <td>
+                                        <img src="{{asset('/images/produk/' . $data->cover)}}" class="rounded" width="100">
+                                    </td>
                                     <td>{{ $data->nama_produk }}</td>
                                     <td>{{ $data->kategori->nama_kategori }}</td>
                                     <td>{{ $data->harga }}</td>

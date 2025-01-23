@@ -40,6 +40,11 @@
                                 <option value="Kelas XII">Kelas XII</option>
                             </select>
                         </div>
+                        <div class="mb-3">
+                            <label>Cover : </label>
+                            <img src="{{ asset('/images/siswa/' . $siswa->cover)}}" width="100" class="rounded">
+                            <input type="file" name="cover" class="form-control">
+                        </div>
                         <button type="submit" class="btn btn-primary">Update</button>
                     </form>
                 </div>

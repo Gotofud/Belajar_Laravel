@@ -31,6 +31,11 @@
                             <label>Stok  : </label>
                             <input type="number" class="form-control" name="stok" value="{{$produk->stok}}">
                         </div>
+                        <div class="mb-3">
+                            <label>Cover : </label>
+                            <img src="{{ asset('/images/produk/' . $produk->cover)}}" width="100" class="rounded">
+                            <input type="file" name="cover" class="form-control">
+                        </div>
                         <button type="submit" class="btn btn-primary" name="save">Edit</button>
                     </form>
                 </div>

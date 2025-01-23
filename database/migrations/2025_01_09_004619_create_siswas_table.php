@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('nama');
             $table->string('jenis_kelamin');
             $table->string('kelas');
+            $table->string('cover');
             $table->timestamps();
         });
     }

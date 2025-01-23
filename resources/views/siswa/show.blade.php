@@ -40,6 +40,10 @@
                                 <option value="Kelas XII">Kelas XII</option>
                             </select>
                         </div>
+                        <div class="mb-3">
+                            <label>Cover : </label>
+                            <img src="{{ asset('/images/siswa/' . $siswa->cover)}}" width="100" class="rounded">
+                        </div>
                         <a href="{{route('siswa.index')}}" class="btn btn-warning">Kembali</a>
                     </form>
                 </div>
