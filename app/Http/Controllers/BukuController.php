@@ -125,11 +125,16 @@ class BukuController extends Controller
         $buku->id_penerbit = $request->id_penerbit;
         $buku->tanggal_terbit = $request->tanggal_terbit;
 
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
+            $buku->deleteImage();
             $img = $request->file('image');
-            $name = rand(1000,9999) . $img->getClientOriginalName();
+            $name = rand(1000, 9999) . '_' . $img->getClientOriginalName();
             $img->move('images/buku', $name);
+    
             $buku->image = $name;
+        } else {
+
+            $buku->image = null;
         }
 
         $buku->save();

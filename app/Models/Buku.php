@@ -12,10 +12,11 @@ class Buku extends Model
     protected $fillable = ['id','nama_buku','harga','stok','image','id_penerbit','tanggal_terbit','id_genre'];
     public $timestamp = true;
 
-    public function deleteImage(){
-        if($this->cover && file_exists(public_path('images/buku' . $this->image))){
-            return unlink(public_path('images/buku' . $this->image));
+    public function deleteImage() {
+        if ($this->image && file_exists(public_path('images/buku/' . $this->image))) {
+            return unlink(public_path('images/buku/' . $this->image));
         }
+        return false; 
     }
 
     public function penerbit(){
