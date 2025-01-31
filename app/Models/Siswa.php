@@ -11,10 +11,11 @@ class Siswa extends Model
     protected $fillable = ['id', 'nis', 'nama', 'jenis_kelamin', 'kelas'];
     public $timestamp;
 
-    public function deleteImage(){
-        if($this->cover && file_exists(public_path('images/siswa' . $this->cover))){
-            return unlink(public_path('images/siswa' . $this->cover));
+    public function deleteImage() {
+        if ($this->cover && file_exists(public_path('images/siswa/' . $this->cover))) {
+            return unlink(public_path('images/siswa/' . $this->cover));
         }
+        return false; 
     }
 }
 

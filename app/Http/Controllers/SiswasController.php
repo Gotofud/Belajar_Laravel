@@ -100,13 +100,17 @@ class Siswascontroller extends Controller
         $siswa->jenis_kelamin = $request->jk;
         $siswa->kelas = $request->kelas;
 
-        if ($request->hasFile('cover')){
+        if ($request->hasFile('cover')) {
             $siswa->deleteImage();
             $img = $request->file('cover');
-            $name = rand(1000,9999). $img->getClientOriginalName();
+            $name = rand(1000, 9999) . '_' . $img->getClientOriginalName();
             $img->move('images/siswa', $name);
+    
             $siswa->cover = $name;
-        }
+        } else {
+
+            $siswa->cover = null;
+        }   
         $siswa->save();
 
         return redirect()->route('siswa.index')->with('success', 'Data berhasil di rubah');

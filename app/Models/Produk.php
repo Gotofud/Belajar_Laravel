@@ -11,11 +11,11 @@ class Produk extends Model
 
     protected $fillable = ['id','nama_produk','harga','stok','id_kategori'];
     public $timestamp = true;
-
-    public function deleteImage(){
-        if($this->cover && file_exists(public_path('images/produk' . $this->cover))){
-            return unlink(public_path('images/produk' . $this->cover));
+    public function deleteImage() {
+        if ($this->cover && file_exists(public_path('images/produk/' . $this->cover))) {
+            return unlink(public_path('images/produk/' . $this->cover));
         }
+        return false; 
     }
 
     public function kategori(){

@@ -97,12 +97,16 @@ class ProdukController extends Controller
         $produk->stok = $request->stok;
         $produk->id_kategori = $request->id_kategori;
         
-        if ($request->hasFile('cover')){
+        if ($request->hasFile('cover')) {
             $produk->deleteImage();
             $img = $request->file('cover');
-            $name = rand(1000,9999). $img->getClientOriginalName();
+            $name = rand(1000, 9999) . '_' . $img->getClientOriginalName();
             $img->move('images/produk', $name);
+    
             $produk->cover = $name;
+        } else {
+
+            $produk->cover = null;
         }
         $produk->save();
 
