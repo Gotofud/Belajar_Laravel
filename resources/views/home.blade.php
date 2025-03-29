@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Startmin - Bootstrap Admin Theme</title>
+        <title>Admin</title> 
 
         <!-- Bootstrap Core CSS -->
         <link href="{{ asset ('admin/css/bootstrap.min.css')}}" rel="stylesheet">
