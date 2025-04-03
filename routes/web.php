@@ -34,8 +34,9 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    return 'home';
+    return view('home');
 });
+
 
 Route::get('/about', function () {
     return 'Halo Ini About';
