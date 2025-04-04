@@ -1,12 +1,20 @@
-@extends('layouts.app')
+@include('layouts.header')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header bg-dark text-white">{{ __('Data') }}</div>
+<body>
 
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        @include('layouts.navigation')
+        <!-- /.sidebar -->
+        @include('layouts.sidebar')
+
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <h1 class="page-header">Show Data Barang</h1>
+                <div class="card">
+                <div class="card-header "></div>
                 <div class="card-body">
                     <form action="{{ route('product.update', $product->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -31,12 +39,19 @@
                             <label>Stock : </label>
                             <input type="number" class="form-control" name="stock" value="{{$product->stock}}" disabled>
                         </div>
-                        <a href="{{route('product.index')}}" class="btn btn-warning">Back</a>
+                        <a href="{{route('product.index')}}" class="btn btn-warning" style="margin-top:10px;">Back</a>
                     </form>
                 </div>
             </div>
+            </div>
+            <!-- /.container-fluid -->
         </div>
-    </div>
-</div>
-@endsection
+        <!-- /#page-wrapper -->
 
+    </div>
+    <!-- /#wrapper -->
+    <!-- Js -->
+    @include('layouts.script')
+</body>
+
+</html>

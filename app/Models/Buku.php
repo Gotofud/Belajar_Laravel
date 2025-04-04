@@ -18,7 +18,7 @@ class Buku extends Model
         }
         return false; 
     }
-
+    
     public function penerbit(){
         return $this->belongsTo(Penerbit::class, 'id_penerbit');
     }
