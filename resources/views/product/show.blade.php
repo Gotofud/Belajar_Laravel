@@ -16,7 +16,7 @@
                 <div class="card">
                 <div class="card-header "></div>
                 <div class="card-body">
-                    <form action="{{ route('product.update', $product->id)}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('product.show', $product->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                         <div class="mb-3">

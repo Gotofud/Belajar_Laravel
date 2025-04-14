@@ -1,15 +1,18 @@
-@include('layouts.header')
+@include('layouts.admin.header')
 
 <body>
 
     <div id="wrapper">
 
         <!-- Navigation -->
-        @include('layouts.navigation')
-        <!-- /.sidebar -->
-        @include('layouts.sidebar')
+        @include('layouts.admin.navigation')
+        <!-- /Navigation -->
 
+        <!-- sidebar -->
+        @include('layouts.admin.sidebar')
+        <!-- /sidebar -->
 
+<!-- Content -->
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
@@ -120,8 +123,12 @@
 
     </div>
     <!-- /#wrapper -->
+     <!-- /Content -->
+
+
     <!-- Js -->
-    @include('layouts.script')
+    @include('layouts.admin.script')
+    <!-- /Js -->
 </body>
 
 </html>

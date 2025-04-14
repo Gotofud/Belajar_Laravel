@@ -8,7 +8,7 @@
                 <div class="card-header bg-dark text-white">{{ __('Data') }}</div>
 
                 <div class="card-body">
-                    <form action="{{ route('customer.update', $customer->id)}}" method="POST" enctype="multipart/form-data" disabled>
+                    <form action="{{ route('customer.show', $customer->id)}}" method="POST" enctype="multipart/form-data" disabled>
                     @csrf
                     @method('PUT')
                         <div class="mb-3">

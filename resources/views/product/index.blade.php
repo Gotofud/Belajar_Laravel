@@ -1,13 +1,13 @@
-@include('layouts.header')
+@include('layouts.admin.header')
 
 <body>
 
     <div id="wrapper">
 
         <!-- Navigation -->
-        @include('layouts.navigation')
+        @include('layouts.admin.navigation')
         <!-- /.sidebar -->
-        @include('layouts.sidebar')
+        @include('layouts.admin.sidebar')
 
 
         <div id="page-wrapper">
@@ -73,7 +73,7 @@
     </div>
     <!-- /#wrapper -->
     <!-- Js -->
-    @include('layouts.script')
+    @include('layouts.admin.script')
 </body>
 
 </html>

@@ -16,7 +16,7 @@
                             <a href="{{ route('home') }}" ><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                        <a href="{{ route('product.index') }}"><i class="fa fa-edit fa-fw"></i> Data Barang</a>
+                        <a href="{{ route('product.index') }}"><i class="fa fa-table fa-fw"></i> Data Barang</a>
                         </li>
                 </div>
             </aside>

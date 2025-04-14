@@ -8,7 +8,7 @@
                 <div class="card-header bg-dark text-white">{{ __('Data') }}</div>
 
                 <div class="card-body">
-                    <form action="{{ route('order.update', $order->id) }}" method="POST"
+                    <form action="{{ route('order.show', $order->id) }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')

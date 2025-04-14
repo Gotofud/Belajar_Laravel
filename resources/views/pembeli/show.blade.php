@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Tambah Data pembeli') }}</div>
 
                 <div class="card-body">
-                    <form action="{{ route('pembeli.update', $pembeli->id)}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('pembeli.show', $pembeli->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                         <div class="mb-3">

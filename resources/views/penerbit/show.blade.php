@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Edit Data') }}</div>
 
                 <div class="card-body">
-                <form action="{{ route('penerbit.update', $penerbit->id)}}" method="POST">
+                <form action="{{ route('penerbit.show', $penerbit->id)}}" method="POST">
                     @csrf
                     @method('PUT')
                         <div class="mb-3">

@@ -14,7 +14,7 @@
                 <div class="card-header">{{ __('Edit Data PPDB') }}</div>
 
                 <div class="card-body">
-                    <form action="{{ route('ppdb.store', $ppdb->id)}}" method="POST">
+                    <form action="{{ route('ppdb.show', $ppdb->id)}}" method="POST">
                     @csrf
                     @method('PUT')
                         <div class="mb-3">
