@@ -42,6 +42,14 @@ class Siswascontroller extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'nis' => 'required',
+            'nama' => 'required',
+            'jenis_kelamin' => 'required',
+            'kelas' => 'required',
+            'cover' => 'required'
+        ]); 
+
         $siswa = new Siswa;
         $siswa->nis = $request->nis;
         $siswa->nama = $request->nama;
@@ -53,7 +61,9 @@ class Siswascontroller extends Controller
             $name = rand(1000,9999) . $img->getClientOriginalName();
             $img->move('images/siswa', $name);
             $siswa->cover = $name;
-        }
+        } else {
+            $siswa->cover = null;
+        } 
 
         $siswa->save();
 
@@ -94,6 +104,14 @@ class Siswascontroller extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'nis' => 'required',
+            'nama' => 'required',
+            'jenis_kelamin' => 'required',
+            'kelas' => 'required',
+            'cover' => 'required'
+        ]); 
+        
         $siswa = Siswa::findOrFail($id);
         $siswa->nis = $request->nis;
         $siswa->nama = $request->nama;
@@ -108,9 +126,9 @@ class Siswascontroller extends Controller
     
             $siswa->cover = $name;
         } else {
-
             $siswa->cover = null;
         }   
+
         $siswa->save();
 
         return redirect()->route('siswa.index')->with('success', 'Data berhasil di rubah');

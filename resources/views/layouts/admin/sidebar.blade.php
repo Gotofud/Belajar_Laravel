@@ -16,7 +16,13 @@
                             <a href="{{ route('home') }}" ><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                        <a href="{{ route('product.index') }}"><i class="fa fa-table fa-fw"></i> Data Barang</a>
+                        <a href="{{ route('siswa.index') }}"><i class="fa fa-table fa-fw"></i> Data Siswa</a>
+                        </li>
+                        <li>
+                        <a href="{{ route('produk.index') }}"><i class="fa fa-folder fa-fw"></i> Data Produk</a>
+                        </li>
+                        <li>
+                        <a href="{{ route('kategori.index') }}"><i class="fa fa-pie-chart fa-fw"></i> Data Kategori</a>
                         </li>
                 </div>
             </aside>

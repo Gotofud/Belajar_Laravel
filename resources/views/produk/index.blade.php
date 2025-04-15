@@ -1,20 +1,34 @@
-@extends('layouts.app')
+@include('layouts.admin.header')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Data') }}</div>
+<body>
 
-                <div class="card-body">
-                    @if (session('success'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            {{session('success')}}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    @endif
-                    <table class="table">
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        @include('layouts.admin.navigation')
+        <!-- /.sidebar -->
+        @include('layouts.admin.sidebar')
+
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <h1 class="page-header">Siswa</h1>
+                <div class="card">
+                    <div class="card-body">
+                        @if (session('success'))
+                        <div class="alert alert-success alert-dismissible">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                        {{session('success')}} <a href="#" class="alert-link"></a>
+                                    </div>
+                        @endif
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Data Produk
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
@@ -34,7 +48,7 @@
                                 <tr>
                                     <th scope="row">{{ $no++ }}</th>
                                     <td>
-                                        <img src="{{asset('/images/produk/' . $data->cover)}}" class="rounded" width="100">
+                                        <img src="{{asset('/images/produk/' . $data->cover)}}" class="rounded" width="75" height="75"   >
                                     </td>
                                     <td>{{ $data->nama_produk }}</td>
                                     <td>{{ $data->kategori->nama_kategori }}</td>
@@ -55,11 +69,24 @@
                             @endforeach
                         </tbody>
                     </table>
-
-                    <a href="{{route('produk.create')}}" class="btn btn-primary">Add</a>
+                                    <a href="{{route('produk.create')}}" class="btn btn-primary">Add</a>
+                                </div>
+                                <!-- /.table-responsive -->
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!-- /.container-fluid -->
         </div>
+        <!-- /#page-wrapper -->
+
     </div>
-</div>
-@endsection
+    <!-- /#wrapper -->
+    <!-- Js -->
+    @include('layouts.admin.script')
+</body>
+
+</html>
+
