@@ -17,6 +17,7 @@ use App\Http\Controllers\GenreController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\PembeliController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\FrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,9 +30,11 @@ use App\Http\Controllers\TransaksiController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Front
+Route::get('/', [FrontController::class, 'index']);
 
 Route::get('/home', function () {
     return view('home');
@@ -154,3 +157,4 @@ route::resource('genre', GenreController::class);
 route::resource('buku', BukuController::class);
 route::resource('pembeli', PembeliController::class);
 route::resource('transaksi', TransaksiController::class);
+route::resource('front', FrontController::class);
