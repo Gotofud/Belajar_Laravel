@@ -18,6 +18,9 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\PembeliController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\FrontController;
+use App\Http\Middleware\isAdmin; 
+use PHPUnit\TextUI\XmlConfiguration\Group;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -143,12 +146,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // CRUD
 
-route::resource('siswa', Siswascontroller::class);
+Route::prefix('admin')->middleware('auth',isAdmin::class)->group(function(){    
+    route::resource('siswa', Siswascontroller::class);
+    route::resource('kategori', KategoriController::class);
+    route::resource('produk', ProdukController::class);
+});
+
 route::resource('ppdb', PppdbsController::class);
-route::resource('pengguna', PenggunaController::class);
 route::resource('telepon', TeleponController::class);
-route::resource('kategori', KategoriController::class);
-route::resource('produk', ProdukController::class);
+route::resource('pengguna', PenggunaController::class);
 route::resource('product', ProductController::class);
 route::resource('customer', CustomerController::class);
 route::resource('order', OrderController::class);

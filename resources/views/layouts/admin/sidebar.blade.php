@@ -15,7 +15,8 @@
                         <li>
                             <a href="{{ route('home') }}" ><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
-                        <li>
+                        @if (Auth::user()->is_admin === 1)
+                            <li>
                         <a href="{{ route('siswa.index') }}"><i class="fa fa-table fa-fw"></i> Data Siswa</a>
                         </li>
                         <li>
@@ -24,5 +25,6 @@
                         <li>
                         <a href="{{ route('kategori.index') }}"><i class="fa fa-pie-chart fa-fw"></i> Data Kategori</a>
                         </li>
+                        @endif
                 </div>
             </aside>
